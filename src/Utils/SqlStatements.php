@@ -18,7 +18,7 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\Import\Utils\Ee\V212;
+namespace TechDivision\Import\Ee\Utils;
 
 /**
  * Utility class with the SQL statements to use.
