@@ -18,7 +18,7 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\Import\Product\Ee\Observers;
+namespace TechDivision\Import\Ee\Observers;
 
 use TechDivision\Import\Utils\MemberNames;
 use TechDivision\Import\Utils\StoreViewCodes;
@@ -33,8 +33,13 @@ use TechDivision\Import\Observers\AttributeObserverTrait;
  * @link      https://github.com/techdivision/import-ee
  * @link      http://www.techdivision.com
  */
-trait EeAttributeObserverTrait extends AttributeObserverTrait
+trait EeAttributeObserverTrait
 {
+
+    /**
+     * The
+     */
+    use AttributeObserverTrait;
 
     /**
      * Prepare the attributes of the entity that has to be persisted.
