@@ -1,3 +1,13 @@
+# Version 1.0.0-alpha4
+
+## Bugfixes
+
+* Fixed invalid callback invocation in EeAttributeObserverTrait
+
+## Features
+
+* None
+
 # Version 1.0.0-alpha3
 
 ## Bugfixes

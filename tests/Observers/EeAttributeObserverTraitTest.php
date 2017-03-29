@@ -32,4 +32,13 @@ namespace TechDivision\Import\Ee\Observers;
 class EeAttributeObserverTraitTest extends \PHPUnit_Framework_TestCase
 {
 
+    /**
+     * Dummy test implementation.
+     *
+     * @return void
+     */
+    public function testDummy()
+    {
+        $this->markTestSkipped('Still to implement');
+    }
 }
