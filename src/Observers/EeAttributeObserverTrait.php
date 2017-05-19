@@ -56,7 +56,7 @@ trait EeAttributeObserverTrait
 
         // invoke the pre-cast callbacks
         foreach ($callbacks as $callback) {
-            $this->attributeValue = $callback->handle($this->attributeCode, $this->attributeValue);
+            $this->attributeValue = $callback->handle($this);
         }
 
         // query whether or not the attribute has been be processed by the callbacks
