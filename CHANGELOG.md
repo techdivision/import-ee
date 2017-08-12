@@ -1,3 +1,13 @@
+# Version 1.0.0-beta5
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add attribute is_anchor to the resultset when loading categories
+
 # Version 1.0.0-beta4
 
 ## Bugfixes
