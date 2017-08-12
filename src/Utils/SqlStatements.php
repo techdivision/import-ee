@@ -74,7 +74,14 @@ class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
                         AND t1.entity_type_id = 3
                         AND t2.attribute_id = t1.attribute_id
                         AND t2.store_id = 0
-                        AND t2.row_id = t0.row_id) AS url_path
+                        AND t2.row_id = t0.row_id) AS url_path,
+                    (SELECT `value`
+                       FROM eav_attribute t1, catalog_category_entity_int t2
+                      WHERE t1.attribute_code = \'is_anchor\'
+                        AND t1.entity_type_id = 3
+                        AND t2.attribute_id = t1.attribute_id
+                        AND t2.store_id = 0
+                        AND t2.row_id = t0.row_id) AS is_anchor
                FROM catalog_category_entity AS t0',
         SqlStatements::CATEGORY_VARCHARS_BY_ENTITY_IDS =>
             'SELECT t1.*
