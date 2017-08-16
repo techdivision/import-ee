@@ -1,3 +1,13 @@
+# Version 1.0.0-beta6
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Update composer.json to load libraries necessary for symfony DI
+
 # Version 1.0.0-beta5
 
 ## Bugfixes
