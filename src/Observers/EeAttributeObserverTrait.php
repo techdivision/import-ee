@@ -20,8 +20,7 @@
 
 namespace TechDivision\Import\Ee\Observers;
 
-use TechDivision\Import\Utils\MemberNames;
-use TechDivision\Import\Utils\StoreViewCodes;
+use TechDivision\Import\Ee\Utils\MemberNames;
 use TechDivision\Import\Observers\AttributeObserverTrait;
 
 /**
@@ -44,44 +43,13 @@ trait EeAttributeObserverTrait
     use AttributeObserverTrait;
 
     /**
-     * Prepare the attributes of the entity that has to be persisted.
+     * Return's the PK column name to create the product => attribute relation.
      *
-     * @return array The prepared attributes
+     * @return string The PK column name
      */
-    protected function prepareAttributes()
+    protected function getPrimaryKeyMemberName()
     {
-
-        // load the callbacks for the actual attribute code
-        $callbacks = $this->getCallbacksByType($this->attributeCode);
-
-        // invoke the pre-cast callbacks
-        foreach ($callbacks as $callback) {
-            $this->attributeValue = $callback->handle($this);
-        }
-
-        // query whether or not the attribute has been be processed by the callbacks
-        if ($this->attributeValue === null) {
-            return;
-        }
-
-        // load the ID of the product that has been created recently
-        $lastEntityId = $this->getPrimaryKey();
-
-        // load the store ID
-        $storeId = $this->getRowStoreId(StoreViewCodes::ADMIN);
-
-        // cast the value based on the backend type
-        $castedValue = $this->castValueByBackendType($this->backendType, $this->attributeValue);
-
-        // prepare the attribute values
-        return $this->initializeEntity(
-            array(
-                MemberNames::ROW_ID       => $lastEntityId,
-                MemberNames::ATTRIBUTE_ID => $this->attributeId,
-                MemberNames::STORE_ID     => $storeId,
-                MemberNames::VALUE        => $castedValue
-            )
-        );
+        return MemberNames::ROW_ID;
     }
 
     /**
