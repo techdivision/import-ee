@@ -1,3 +1,13 @@
+# Version 1.0.0-beta7
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Refactor attribute import functionality
+
 # Version 1.0.0-beta6
 
 ## Bugfixes
