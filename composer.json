@@ -4,7 +4,7 @@
     "minimum-stability": "alpha",
     "license": "OSL-3",
     "require": {
-        "techdivision/import": "~1.0"
+        "techdivision/import": "dev-di as 1.0.0-beta57"
     },
     "require-dev": {
         "phpmd/phpmd": "2.5.*",

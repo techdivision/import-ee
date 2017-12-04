@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TechDivision\Import\Ee\Utils\SqlStatements
+ * TechDivision\Import\Ee\Repositories\SqlStatementRepository
  *
  * NOTICE OF LICENSE
  *
@@ -18,7 +18,9 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\Import\Ee\Utils;
+namespace TechDivision\Import\Ee\Repositories;
+
+use TechDivision\Import\Ee\Utils\SqlStatementKeys;
 
 /**
  * Utility class with the SQL statements to use.
@@ -29,22 +31,8 @@ namespace TechDivision\Import\Ee\Utils;
  * @link      https://github.com/techdivision/import-ee
  * @link      http://www.techdivision.com
  */
-class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
+class SqlStatementRepository extends \TechDivision\Import\Repositories\SqlStatementRepository
 {
-
-    /**
-     * The SQL statement to load all available categories.
-     *
-     * @var string
-     */
-    const CATEGORIES = 'categories';
-
-    /**
-     * The SQL statement to load the category varchars for a list of entity IDs.
-     *
-     * @var string
-     */
-    const CATEGORY_VARCHARS_BY_ENTITY_IDS = 'category_varchars.by.entity_ids';
 
     /**
      * The SQL statements.
@@ -52,7 +40,7 @@ class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
      * @var array
      */
     private $statements = array(
-        SqlStatements::CATEGORIES =>
+        SqlStatementKeys::CATEGORIES =>
             'SELECT t0.*,
                     (SELECT `value`
                        FROM eav_attribute t1, catalog_category_entity_varchar t2
@@ -83,7 +71,7 @@ class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
                         AND t2.store_id = 0
                         AND t2.row_id = t0.row_id) AS is_anchor
                FROM catalog_category_entity AS t0',
-        SqlStatements::CATEGORY_VARCHARS_BY_ENTITY_IDS =>
+        SqlStatementKeys::CATEGORY_VARCHARS_BY_ENTITY_IDS =>
             'SELECT t1.*
                FROM catalog_category_entity AS t0
          INNER JOIN catalog_category_entity_varchar AS t1
