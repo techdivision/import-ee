@@ -31,18 +31,4 @@ namespace TechDivision\Import\Ee\Utils;
  */
 class SqlStatementKeys extends \TechDivision\Import\Utils\SqlStatementKeys
 {
-
-    /**
-     * The SQL statement to load all available categories.
-     *
-     * @var string
-     */
-    const CATEGORIES = 'categories';
-
-    /**
-     * The SQL statement to load the category varchars for a list of entity IDs.
-     *
-     * @var string
-     */
-    const CATEGORY_VARCHARS_BY_ENTITY_IDS = 'category_varchars.by.entity_ids';
 }
