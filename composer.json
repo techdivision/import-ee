@@ -2,9 +2,9 @@
     "name": "techdivision/import-ee",
     "description": "M2IF library providing basic Magento 2 EE import functionality",
     "minimum-stability": "alpha",
-    "license": "OSL-3",
+    "license": "OSL-3.0",
     "require": {
-        "techdivision/import": "~1.0"
+        "techdivision/import": "dev-di as 1.0.0-beta57"
     },
     "require-dev": {
         "phpmd/phpmd": "2.5.*",
@@ -13,8 +13,6 @@
         "symfony/http-kernel": "~2.8|~3.0",
         "phploc/phploc": "2.0.*",
         "pdepend/pdepend": "2.0.*",
-        "phpunit/phpunit": "4.4.*",
-        "sebastian/phpcpd": "2.0.*",
         "squizlabs/php_codesniffer": "2.2.*",
         "phpdocumentor/phpdocumentor": "2.8.*",
         "consolidation/robo": "~1.0"
