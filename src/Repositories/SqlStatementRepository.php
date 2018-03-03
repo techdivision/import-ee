@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TechDivision\Import\Ee\Utils\SqlStatements
+ * TechDivision\Import\Ee\Repositories\SqlStatementRepository
  *
  * NOTICE OF LICENSE
  *
@@ -18,7 +18,9 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\Import\Ee\Utils;
+namespace TechDivision\Import\Ee\Repositories;
+
+use TechDivision\Import\Ee\Utils\SqlStatementKeys;
 
 /**
  * Utility class with the SQL statements to use.
@@ -29,7 +31,7 @@ namespace TechDivision\Import\Ee\Utils;
  * @link      https://github.com/techdivision/import-ee
  * @link      http://www.techdivision.com
  */
-class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
+class SqlStatementRepository extends \TechDivision\Import\Repositories\SqlStatementRepository
 {
 
     /**
@@ -38,7 +40,7 @@ class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
      * @var array
      */
     private $statements = array(
-        SqlStatements::CATEGORIES =>
+        SqlStatementKeys::CATEGORIES =>
             'SELECT t0.*,
                     (SELECT `value`
                        FROM eav_attribute t1, catalog_category_entity_varchar t2
@@ -69,7 +71,7 @@ class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
                         AND t2.store_id = 0
                         AND t2.row_id = t0.row_id) AS is_anchor
                FROM catalog_category_entity AS t0',
-        SqlStatements::CATEGORIES_BY_STORE_VIEW =>
+        SqlStatementKeys::CATEGORIES_BY_STORE_VIEW =>
             'SELECT t0.*,
                  IF (name_store.value_id > 0, name_store.value, name_default.value) AS name,
                  IF (url_key_store.value_id > 0, url_key_store.value, url_key_default.value) AS url_key,
@@ -132,7 +134,7 @@ class SqlStatements extends \TechDivision\Import\Utils\SqlStatements
                     )
                     AND is_anchor_default.store_id = 0
                     AND is_anchor_default.row_id = t0.row_id',
-        SqlStatements::CATEGORY_VARCHARS_BY_ENTITY_IDS =>
+        SqlStatementKeys::CATEGORY_VARCHARS_BY_ENTITY_IDS =>
             'SELECT t1.*
                FROM catalog_category_entity AS t0
          INNER JOIN catalog_category_entity_varchar AS t1
