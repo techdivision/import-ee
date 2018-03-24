@@ -1,9 +1,9 @@
 {
     "name": "techdivision/import-ee",
     "description": "M2IF library providing basic Magento 2 EE import functionality",
-    "minimum-stability": "alpha",
     "license": "OSL-3.0",
     "require": {
+        "php": ">=5.6.0",
         "techdivision/import": "~1.0"
     },
     "require-dev": {
@@ -27,8 +27,8 @@
         "psr-4": {
             "TechDivision\\Import\\Ee\\": [
                 "src/",
-                "tests/",
-                "symfony/"
+                "symfony/",
+                "tests/unit"
             ]
         }
     }
