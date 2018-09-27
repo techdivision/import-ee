@@ -4,9 +4,11 @@
     "license": "OSL-3.0",
     "require": {
         "php": ">=5.6.0",
-        "techdivision/import": "~1.0"
+        "techdivision/import": "~1.0|~2.0"
     },
     "require-dev": {
+        "doctrine/dbal": "~2.0",
+        "symfony/config": "~2.8|~3.0",
         "phpmd/phpmd": "2.5.*",
         "phpunit/phpunit": "4.4.*",
         "sebastian/phpcpd": "2.0.*",
@@ -14,7 +16,7 @@
         "phploc/phploc": "2.0.*",
         "pdepend/pdepend": "2.0.*",
         "squizlabs/php_codesniffer": "2.2.*",
-        "phpdocumentor/phpdocumentor": "2.8.*",
+        "phpdocumentor/phpdocumentor": "2.9.*",
         "consolidation/robo": "~1.0"
     },
     "authors": [
