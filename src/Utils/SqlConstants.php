@@ -35,6 +35,8 @@ class SqlConstants
     /**
      * SQL constant defining the maximum supported unix timestamp. Represents 2038-01-19 03:14:07.
      *
+     * @see \Magento\Staging\Model\VersionManager::MAX_VERSION
+     *
      * @var string
      */
     const MAX_UNIXTIMESTAMP = 2147483647;
