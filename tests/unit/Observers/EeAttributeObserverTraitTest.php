@@ -20,6 +20,8 @@
 
 namespace TechDivision\Import\Ee\Observers;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for the EE attribute observer trait.
  *
@@ -29,7 +31,7 @@ namespace TechDivision\Import\Ee\Observers;
  * @link      https://github.com/techdivision/import-ee
  * @link      http://www.techdivision.com
  */
-class EeAttributeObserverTraitTest extends \PHPUnit_Framework_TestCase
+class EeAttributeObserverTraitTest extends TestCase
 {
 
     /**
