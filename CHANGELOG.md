@@ -1,3 +1,13 @@
+# Version 14.0.1
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Extract dev autoloading
+
 # Version 14.0.0
 
 ## Bugfixes
