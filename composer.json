@@ -1,6 +1,6 @@
 {
     "name": "techdivision/import-ee",
-    "description": "M2IF library providing basic Magento 2 EE import functionality",
+    "description": "Pacemaker library providing basic Magento 2 EE import functionality",
     "license": "OSL-3.0",
     "require": {
         "php": ">=7.1.0",
