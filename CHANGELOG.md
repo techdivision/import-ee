@@ -1,3 +1,13 @@
+# Version 16:0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Refactoring deprecated classes. see https://github.com/techdivision/import-cli-simple/blob/master/UPGRADE-4.0.0.md
+
 # Version 15.0.0
 
 ## Bugfixes
