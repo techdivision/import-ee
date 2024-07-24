@@ -1,4 +1,12 @@
-# Version 16:0.0
+# Version 17.0.0
+
+### PHP 8.1 Compatibility
+
+* Update dependencies
+* Add PHP ">=8.1" support
+* Remove PHP 7.3 support
+
+# Version 16.0.0
 
 ## Bugfixes
 
