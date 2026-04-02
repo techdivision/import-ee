@@ -1,3 +1,13 @@
+# Version 17.1.0
+
+## Features
+
+### PHP 8.5 Compatibility
+
+* Update dependencies
+* Remove PHP 8.2 support
+* Use the project-specific XML loader class instead of the one removed in `symfony/dependency-injection` v8
+
 # Version 17.0.0
 
 ### PHP 8.1 Compatibility
