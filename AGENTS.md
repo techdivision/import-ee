@@ -86,6 +86,46 @@ EeObserver::handle($row): void
 - Beachte Staging-Tabellen bei EE-Imports
 - Erwäge Sequence-Management
 
+## Häufige Use Cases
+
+### CSV-Beispiel: EE Product Import mit Staging
+```csv
+sku,name,staging_date,sequence_value
+PRODUCT-EE-1,EE Product 1,2026-01-01,100
+PRODUCT-EE-2,EE Product 2,2026-02-01,101
+PRODUCT-EE-3,EE Product 3,2026-03-01,102
+```
+
+### Szenarien
+1. **Staging Import**: Products in Staging-Tabellen importieren für spätere Veröffentlichung
+2. **Sequence Management**: Automatische Sequence-Verwaltung für EE-Entities
+3. **Bulk EE Updates**: Mehrere Staging-Importe parallel
+
+## Performance-Überlegungen
+
+- **Staging-Overhead**: Staging-Tabellen verursachen ~10-15% zusätzliche Schreiboperationen
+- **Sequence-Lookups**: Sequence-Abfragen können mit vielen Entities langsam werden
+- **Memory-Usage**: Staging-Data im Memory kann bei 100k+ Produkten zu >500MB führen
+- **Empfehlung**: Nutze Batch-Size von 1000-5000 für optimale Performance
+
+## Verwandte Module
+
+- **import-product-ee**: Nutzt `import-ee` für Product-Staging
+- **import-category-ee**: Nutzt `import-ee` für Category-Staging  
+- **import-converter-ee**: Nutzt `import-ee` für Converter-Staging
+- **import-ee** ← **diese Datei**
+
+## Troubleshooting & FAQ
+
+**Q: Staging-Tabellen werden nicht erstellt**
+- A: Prüfe ob EE Staging-Module korrekt installiert sind: `bin/magento module:status | grep Staging`
+
+**Q: Sequence-Werte sind falsch**
+- A: Leere Sequence-Tabellen und re-starte Import: `TRUNCATE table sequence_product`
+
+**Q: "EE-Only" Fehler beim CE-Import**
+- A: Dieses Modul ist nur für Magento EE. Für CE nutze normale Product-Import Module.
+
 ## Bekannte Einschränkungen
 
 - **EE-Only**: Nur für Magento EE Deployments
