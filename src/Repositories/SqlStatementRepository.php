@@ -129,7 +129,7 @@ class SqlStatementRepository extends \TechDivision\Import\Repositories\SqlStatem
                     AND is_anchor_default.store_id = 0
                     AND is_anchor_default.row_id = t0.row_id',
         SqlStatementKeys::CATEGORY_VARCHARS_BY_ENTITY_IDS =>
-            'SELECT t1.*
+            'SELECT t1.*, t0.entity_id
                FROM ${table:catalog_category_entity} AS t0
          INNER JOIN ${table:catalog_category_entity_varchar} AS t1
                  ON t1.row_id = t0.row_id
