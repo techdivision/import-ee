@@ -1,3 +1,9 @@
+# Version 17.2.0
+
+## Features
+
+* Include `entity_id` in category entity varchar SQL query
+
 # Version 17.0.0
 
 ### PHP 8.1 Compatibility
